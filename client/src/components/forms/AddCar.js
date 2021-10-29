@@ -18,7 +18,6 @@ const AddCar = () => {
 
   const onFinish = values => {
     const { year, make, model, price, personId } = values
-    console.log(values)
 
     addCar({
       variables: {
