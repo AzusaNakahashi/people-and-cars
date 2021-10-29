@@ -14,14 +14,11 @@ const getStyles = () => ({
 
 const People = () => {
   const styles = getStyles()
-
-  const getPeople = () => {
-
-  }
   const { loading: loadingC, error: errorC, data: dataC } = useQuery(GET_CARS)
   const { loading, error, data } = useQuery(GET_PEOPLE)
-  if (loading) return 'Loading...'
+  if (loading || loadingC) return 'Loading...'
   if (error) return `Error! ${error.message}`
+  if (errorC) return `Error! ${errorC.message}`
 
   return (
     <>
